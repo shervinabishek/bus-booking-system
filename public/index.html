@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Booking System</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <header class="hero">
+            <div>
+                <h1>Bus Booking System</h1>
+                <p>Search buses, book seats and view your bookings.</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Search Buses</h2>
+                <form id="searchForm" class="form-grid">
+                    <label>
+                        From
+                        <input type="text" id="from" placeholder="City" required />
+                    </label>
+                    <label>
+                        To
+                        <input type="text" id="to" placeholder="City" required />
+                    </label>
+                    <label>
+                        Travel date
+                        <input type="date" id="travelDate" required />
+                    </label>
+                    <button type="submit">Search</button>
+                </form>
+            </section>
+
+            <section class="card" id="resultsCard">
+                <h2>Available Buses</h2>
+                <div id="resultsMessage" class="message"></div>
+                <div id="busesList"></div>
+            </section>
+
+            <section class="card" id="bookingCard">
+                <h2>Book a Seat</h2>
+                <div id="selectedBusInfo" class="bus-info"></div>
+                <form id="bookingForm" class="form-grid hidden">
+                    <label>
+                        Passenger Name
+                        <input type="text" id="passengerName" required />
+                    </label>
+                    <label>
+                        Email
+                        <input type="email" id="passengerEmail" required />
+                    </label>
+                    <label>
+                        Phone
+                        <input type="tel" id="passengerPhone" required />
+                    </label>
+                    <label>
+                        Seat Number
+                        <input type="number" id="seatNumber" min="1" required />
+                    </label>
+                    <input type="hidden" id="selectedBusId" />
+                    <button type="submit">Confirm Booking</button>
+                </form>
+                <div id="bookingMessage" class="message"></div>
+            </section>
+
+            <section class="card">
+                <h2>Find Your Bookings</h2>
+                <form id="bookingsSearchForm" class="form-grid simple-grid">
+                    <label>
+                        Email
+                        <input type="email" id="searchEmail" placeholder="you@example.com" required />
+                    </label>
+                    <button type="submit">Search Bookings</button>
+                </form>
+                <div id="bookingsMessage" class="message"></div>
+                <div id="bookingResults"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
