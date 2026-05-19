@@ -24,6 +24,16 @@ An **Online Bus Seat Booking System** that allows passengers to search for avail
 
 ## Technologies Used
 
+### Frontend
+| Technology | Purpose |
+|---|---|
+| React | UI Library |
+| Vite | Build tool and dev server |
+| React Router DOM | Client-side routing |
+| Axios | HTTP client for API requests |
+| Lucide React | Icon library |
+
+### Backend
 | Technology | Purpose |
 |---|---|
 | Node.js | Runtime environment |
@@ -40,6 +50,11 @@ An **Online Bus Seat Booking System** that allows passengers to search for avail
 
 ```
 bus-booking-system/
+│
+├── frontend/                # React Vite application
+│   ├── src/                 # React components and pages
+│   ├── package.json         # Frontend dependencies
+│   └── vite.config.js       # Vite configuration
 │
 ├── model/
 │   ├── busModel.js          # Bus schema & model
@@ -138,38 +153,48 @@ GET /api/buses/search?from=Colombo&to=Kandy&travelDate=2025-06-15
    cd bus-booking-system
    ```
 
-2. **Install dependencies**
+2. **Backend Setup**
    ```bash
+   # Install backend dependencies
    npm install
    ```
 
-3. **Configure environment variables**
-
-   Edit the `.env` file:
+   Edit the `.env` file in the root folder:
    ```
    PORT = 8000
    MONGO_URL = "mongodb://localhost:27017/bus-booking-system"
    ```
-   For MongoDB Atlas, replace the `MONGO_URL` with your Atlas connection string.
+   *(For MongoDB Atlas, replace the `MONGO_URL` with your Atlas connection string.)*
 
-4. **Run the project**
    ```bash
+   # Run the backend server
    npm start
    ```
 
-5. **Server runs at:**
+3. **Frontend Setup**
+   Open a new terminal window:
+   ```bash
+   cd frontend
+   
+   # Install frontend dependencies
+   npm install
+   
+   # Run the frontend development server
+   npm run dev
    ```
-   http://localhost:8000
-   ```
+
+4. **Access the Application**
+   - **Frontend UI:** `http://localhost:5173`
+   - **Backend API:** `http://localhost:8000`
 
 ---
 
 ## How to Run the Project
 
-1. Ensure MongoDB is running locally (`mongod` service) or use an Atlas URI.
-2. Run `npm start` — nodemon will auto-restart on file changes.
-3. Use **Postman** to test the API endpoints listed above.
-4. Import the Postman collection (see `/screenshots/`) for ready-made requests.
+1. Ensure MongoDB is running locally (`mongod` service) or use an Atlas connection.
+2. In the root directory, run `npm start` to start the backend API.
+3. In the `frontend` directory, run `npm run dev` to start the React UI.
+4. Access the web app in your browser at `http://localhost:5173`.
 
 ---
 
